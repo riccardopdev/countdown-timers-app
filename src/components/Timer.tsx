@@ -1,11 +1,13 @@
 import { TimerType } from '../types/TimerType';
+import TimerDisplay from './TimerDisplay';
 
 const Timer = ({ timer }: TimerProps) => {
   return (
     <div>
-      <p>Timer Value: {timer.initialValue}</p>
-      <p>Timer Name: {timer.label}</p>
-      <p>{timer.initialTimeStamp.toString()}</p>
+      <TimerDisplay seconds={timer.latestValue} />
+      <p>
+        {timer.label} - {timer.initialValue} seconds.
+      </p>
     </div>
   );
 };
