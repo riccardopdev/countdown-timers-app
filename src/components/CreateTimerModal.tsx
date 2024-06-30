@@ -5,6 +5,7 @@ import { ACTIONS } from '../reducers/Actions';
 import { TimerType } from '../types/TimerType';
 import { FormEvent } from 'react';
 import ReactDOM from 'react-dom';
+import st from './CreateTimerModal.module.css';
 
 const CreateTimerModal = ({
   isModalOpen = false,
@@ -15,7 +16,7 @@ const CreateTimerModal = ({
   const timerSeconds = useRef<HTMLInputElement>(null);
 
   const defaultTimerName = 'New Timer';
-  const defaultTimerSeconds = 10;
+  const defaultTimerSeconds = 30;
 
   const modalSelector = document.querySelector('#createTimerModal');
 
@@ -38,39 +39,44 @@ const CreateTimerModal = ({
       completed: false,
     };
     dispatch({ type: ACTIONS.CREATE_TIMER, payload: newTimer });
+    onCancel();
   };
 
   if (!modalSelector) return;
   if (!isModalOpen) return;
 
   return ReactDOM.createPortal(
-    <>
-      <h2>Create new timer</h2>
-      <form onSubmit={createTimer}>
-        <div>
-          <label htmlFor="timer-name">Timer name</label>
-          <input
-            id="timer-name"
-            type="text"
-            ref={timerName}
-            defaultValue={defaultTimerName}
-          />
-        </div>
-        <div>
-          <label htmlFor="seconds">Number of seconds</label>
-          <input
-            id="seconds"
-            type="number"
-            ref={timerSeconds}
-            defaultValue={defaultTimerSeconds}
-          />
-        </div>
-        <div>
-          <button onClick={onCancel}>Cancel</button>
-          <button>Create timer</button>
-        </div>
-      </form>
-    </>,
+    <div className={st.modalOverlay}>
+      <div className={st.modal}>
+        <h2 className={st.h2}>Create new timer</h2>
+        <form onSubmit={createTimer}>
+          <div>
+            <label htmlFor="timer-name">Timer name</label>
+            <input
+              id="timer-name"
+              type="text"
+              ref={timerName}
+              defaultValue={defaultTimerName}
+            />
+          </div>
+          <div>
+            <label htmlFor="seconds">Number of seconds</label>
+            <input
+              id="seconds"
+              type="number"
+              ref={timerSeconds}
+              defaultValue={defaultTimerSeconds}
+            />
+          </div>
+          <div>
+            <button onClick={onCancel} className={`${st.button} ${st.cancel}`}>
+              Cancel
+            </button>
+            <button className={`${st.button} ${st.create}`}>Create</button>
+          </div>
+        </form>
+      </div>
+    </div>,
     modalSelector
   );
 };
