@@ -4,4 +4,5 @@ export enum ACTIONS {
   START_TIMER = 'startTimer',
   PAUSE_TIMER = 'pauseTimer',
   RESUME_TIMER = 'resumeTimer',
+  RESET_TIMER = 'resetTimer',
 }

@@ -18,6 +18,8 @@ const Reducer = (state: DataType, action: ActionsType) => {
       return state;
     case ACTIONS.RESUME_TIMER:
       return state;
+    case ACTIONS.RESET_TIMER:
+      return state;
     default:
       return state;
   }
