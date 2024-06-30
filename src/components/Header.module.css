@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(var(--dark-bg));
+  background-color: rgb(var(--medium-color));
   color: white;
   padding: calc(var(--spacing-unit) * 4);
   display: flex;
