@@ -47,6 +47,20 @@ const Reducer = (state: DataType, action: ActionsType) => {
 
       return state;
     }
+    case ACTIONS.UPDATE_TIMER:
+      state = {
+        timers: state.timers.map((timer) =>
+          timer.id === action.payload.id
+            ? {
+                ...timer,
+                latestValue: timer.latestValue - 1,
+                latestTimeStamp: new Date(),
+              }
+            : timer
+        ),
+      };
+
+      return state;
     default:
       return state;
   }
