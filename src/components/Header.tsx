@@ -1,8 +1,12 @@
+import st from './Header.module.css';
+
 const Header = ({ showCreateTimerModal }: HeaderProps) => {
   return (
-    <header>
+    <header className={st.header}>
       <h1>Timers</h1>
-      <button onClick={showCreateTimerModal}>+</button>
+      <button onClick={showCreateTimerModal} className={st.button}>
+        +
+      </button>
     </header>
   );
 };
