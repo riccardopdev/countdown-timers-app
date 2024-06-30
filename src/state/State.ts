@@ -3,7 +3,7 @@ import { DataType } from '../types/DataType';
 //Dummy data for timers
 const TIMERS_DATA = [
   {
-    id: 'a',
+    id: crypto.randomUUID(),
     label: 'First timer',
     initialTimeStamp: new Date(),
     initialValue: 30,
@@ -13,7 +13,7 @@ const TIMERS_DATA = [
     completed: false,
   },
   {
-    id: 'b',
+    id: crypto.randomUUID(),
     label: 'Second timer',
     initialTimeStamp: new Date(),
     initialValue: 45,
@@ -23,7 +23,7 @@ const TIMERS_DATA = [
     completed: false,
   },
   {
-    id: 'c',
+    id: crypto.randomUUID(),
     label: 'Third timer',
     initialTimeStamp: new Date(),
     initialValue: 90,

@@ -27,7 +27,7 @@ const CreateTimerModal = ({
       Number(timerSeconds.current?.value) || defaultTimerSeconds;
 
     const newTimer: TimerType = {
-      id: 'd',
+      id: crypto.randomUUID(),
       label: timerLabel,
       initialTimeStamp: new Date(),
       initialValue: timerValue,
