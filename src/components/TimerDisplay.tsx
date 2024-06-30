@@ -1,5 +1,5 @@
 const TimerDisplay = ({ seconds }: TimerDisplayProps) => {
-  return <h3>{seconds}</h3>;
+  return <h2>{seconds}</h2>;
 };
 
 type TimerDisplayProps = {

@@ -55,8 +55,7 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
 
   return (
     <div>
-      <p>{timerId}</p>
-      <button onClick={deleteTimer}>Delete Timer</button>
+      <button onClick={deleteTimer}>Delete</button>
       <button onClick={controlCallback}>{controlText}</button>
     </div>
   );

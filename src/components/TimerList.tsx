@@ -12,7 +12,7 @@ const TimerList = () => {
     });
   };
 
-  return <div>{renderTimerList()}</div>;
+  return <>{renderTimerList()}</>;
 };
 
 export default TimerList;
