@@ -1,4 +1,5 @@
 import { TimerType } from '../types/TimerType';
+import TimerControls from './TimerControls';
 import TimerDisplay from './TimerDisplay';
 
 const Timer = ({ timer }: TimerProps) => {
@@ -8,6 +9,7 @@ const Timer = ({ timer }: TimerProps) => {
       <p>
         {timer.label} - {timer.initialValue} seconds.
       </p>
+      <TimerControls timerId={timer.id} />
     </div>
   );
 };
