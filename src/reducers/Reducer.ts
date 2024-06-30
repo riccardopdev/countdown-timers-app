@@ -8,6 +8,9 @@ const Reducer = (state: DataType, action: ActionsType) => {
       state = { timers: [...state.timers, action.payload] };
       return state;
     case ACTIONS.DELETE_TIMER:
+      state = {
+        timers: state.timers.filter((timer) => timer.id !== action.payload.id),
+      };
       return state;
     case ACTIONS.START_TIMER:
       return state;
