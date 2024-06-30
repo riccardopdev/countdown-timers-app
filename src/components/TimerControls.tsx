@@ -22,10 +22,6 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
     dispatch({ type: ACTIONS.PAUSE_TIMER, payload: thisTimer });
   };
 
-  const resumeTimer = () => {
-    dispatch({ type: ACTIONS.RESUME_TIMER, payload: thisTimer });
-  };
-
   const resetTimer = () => {
     dispatch({ type: ACTIONS.RESET_TIMER, payload: thisTimer });
   };
@@ -41,7 +37,7 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
 
     if (thisTimer.paused && thisTimer.latestValue !== thisTimer.initialValue) {
       controlText = 'Resume';
-      controlCallback = resumeTimer;
+      controlCallback = startTimer;
     }
 
     if (!thisTimer.paused && !thisTimer.completed) {

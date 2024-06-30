@@ -27,13 +27,6 @@ const Reducer = (state: DataType, action: ActionsType) => {
         ),
       };
       return state;
-    case ACTIONS.RESUME_TIMER:
-      state = {
-        timers: state.timers.map((timer) =>
-          timer.id === action.payload.id ? { ...timer, paused: false } : timer
-        ),
-      };
-      return state;
     case ACTIONS.RESET_TIMER: {
       const currentDate = new Date();
 
