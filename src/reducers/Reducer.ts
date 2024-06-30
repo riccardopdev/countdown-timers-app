@@ -7,11 +7,13 @@ const Reducer = (state: DataType, action: ActionsType) => {
     case ACTIONS.CREATE_TIMER:
       state = { timers: [...state.timers, action.payload] };
       return state;
+
     case ACTIONS.DELETE_TIMER:
       state = {
         timers: state.timers.filter((timer) => timer.id !== action.payload.id),
       };
       return state;
+
     case ACTIONS.START_TIMER: {
       state = {
         timers: state.timers.map((timer) =>
@@ -20,6 +22,7 @@ const Reducer = (state: DataType, action: ActionsType) => {
       };
       return state;
     }
+
     case ACTIONS.PAUSE_TIMER:
       state = {
         timers: state.timers.map((timer) =>
@@ -27,6 +30,7 @@ const Reducer = (state: DataType, action: ActionsType) => {
         ),
       };
       return state;
+
     case ACTIONS.RESET_TIMER: {
       const currentDate = new Date();
 
@@ -47,7 +51,8 @@ const Reducer = (state: DataType, action: ActionsType) => {
 
       return state;
     }
-    case ACTIONS.UPDATE_TIMER:
+
+    case ACTIONS.UPDATE_TIMER: {
       state = {
         timers: state.timers.map((timer) =>
           timer.id === action.payload.id
@@ -61,6 +66,16 @@ const Reducer = (state: DataType, action: ActionsType) => {
       };
 
       return state;
+    }
+
+    case ACTIONS.STOP_TIMER:
+      state = {
+        timers: state.timers.map((timer) =>
+          timer.id === action.payload.id ? { ...timer, completed: true } : timer
+        ),
+      };
+      return state;
+
     default:
       return state;
   }

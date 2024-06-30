@@ -8,6 +8,7 @@ export type ActionsType = {
     | ACTIONS.START_TIMER
     | ACTIONS.PAUSE_TIMER
     | ACTIONS.RESET_TIMER
-    | ACTIONS.UPDATE_TIMER;
+    | ACTIONS.UPDATE_TIMER
+    | ACTIONS.STOP_TIMER;
   payload: TimerType;
 };
