@@ -5,6 +5,7 @@ export type TimerType = {
   initialValue: number;
   latestTimeStamp: Date;
   latestValue: number;
+  valueToSubtract: number;
   paused: boolean;
   completed: boolean;
 };

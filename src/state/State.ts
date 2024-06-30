@@ -9,6 +9,7 @@ const SAMPLE_TIMERS_DATA = [
     initialValue: 30,
     latestTimeStamp: new Date(),
     latestValue: 30,
+    valueToSubtract: 1,
     paused: true,
     completed: false,
   },

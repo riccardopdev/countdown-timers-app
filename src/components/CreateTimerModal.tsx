@@ -33,6 +33,7 @@ const CreateTimerModal = ({
       initialValue: timerValue,
       latestTimeStamp: new Date(),
       latestValue: timerValue,
+      valueToSubtract: 1,
       paused: true,
       completed: false,
     };

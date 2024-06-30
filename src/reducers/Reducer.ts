@@ -52,21 +52,21 @@ const Reducer = (state: DataType, action: ActionsType) => {
       return state;
     }
 
-    case ACTIONS.UPDATE_TIMER: {
+    case ACTIONS.UPDATE_TIMER:
       state = {
         timers: state.timers.map((timer) =>
           timer.id === action.payload.id
             ? {
                 ...timer,
-                latestValue: timer.latestValue - 1,
+                latestValue: timer.latestValue - timer.valueToSubtract,
                 latestTimeStamp: new Date(),
+                valueToSubtract: 1,
               }
             : timer
         ),
       };
 
       return state;
-    }
 
     case ACTIONS.STOP_TIMER:
       state = {
