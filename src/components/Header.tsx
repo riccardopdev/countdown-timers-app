@@ -1,14 +1,14 @@
-const Header = () => {
-  const createTimer = () => {
-    console.log('Create timer');
-  };
-
+const Header = ({ showCreateTimerModal }: HeaderProps) => {
   return (
     <header>
       <h1>Timers</h1>
-      <button onClick={createTimer}>+</button>
+      <button onClick={showCreateTimerModal}>+</button>
     </header>
   );
+};
+
+type HeaderProps = {
+  showCreateTimerModal: () => unknown;
 };
 
 export default Header;
