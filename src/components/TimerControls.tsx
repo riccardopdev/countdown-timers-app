@@ -3,6 +3,7 @@ import { DataContext } from '../context/DataContext';
 import { DataContextType } from '../types/DataContextType';
 import { ACTIONS } from '../reducers/Actions';
 import { TimerType } from '../types/TimerType';
+import st from './TimerControls.module.css';
 
 const TimerControls = ({ timerId }: TimerControlsProps) => {
   const { state, dispatch } = useContext<DataContextType>(DataContext);
@@ -50,9 +51,15 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
 
   return (
     <div>
-      <button onClick={deleteTimer}>Delete</button>
-      <button onClick={controlCallback}>{controlText}</button>
-      <button onClick={resetTimer}>Reset</button>
+      <button onClick={controlCallback} className={`${st.button} ${st.start}`}>
+        {controlText}
+      </button>
+      <button onClick={resetTimer} className={`${st.button} ${st.reset}`}>
+        Reset
+      </button>
+      <button onClick={deleteTimer} className={`${st.button} ${st.delete}`}>
+        Delete
+      </button>
     </div>
   );
 };

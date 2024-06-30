@@ -1,9 +1,10 @@
 import { TimerType } from '../types/TimerType';
+import st from './TimerLabel.module.css';
 
 const TimerLabel = ({ timer }: TimerLabelProps) => {
   return (
-    <p>
-      {timer.label} - {timer.initialValue} seconds.
+    <p className={st.p}>
+      {timer.label}: {timer.initialValue} seconds
     </p>
   );
 };

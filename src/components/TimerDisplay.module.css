@@ -1,0 +1,6 @@
+.h2 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding: calc(var(--spacing-unit));
+  color: rgb(var(--positive-light-color));
+}

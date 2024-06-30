@@ -66,6 +66,8 @@ const CreateTimerModal = ({
               type="number"
               ref={timerSeconds}
               defaultValue={defaultTimerSeconds}
+              min={1}
+              max={3600}
             />
           </div>
           <div>

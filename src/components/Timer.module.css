@@ -1,0 +1,11 @@
+.section {
+  max-width: 800px;
+  margin: calc(var(--spacing-unit) * 4) auto;
+  border-bottom: 2px solid white;
+}
+
+.timerDisplay {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

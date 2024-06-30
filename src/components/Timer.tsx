@@ -6,6 +6,7 @@ import { DataContextType } from '../types/DataContextType';
 import { DataContext } from '../context/DataContext';
 import { ACTIONS } from '../reducers/Actions';
 import TimerLabel from './TimerLabel';
+import st from './Timer.module.css';
 
 const Timer = ({ timer }: TimerProps) => {
   const { dispatch } = useContext<DataContextType>(DataContext);
@@ -25,9 +26,9 @@ const Timer = ({ timer }: TimerProps) => {
   }, [timer, dispatch]);
 
   return (
-    <section>
+    <section className={st.section}>
       <TimerLabel timer={timer} />
-      <div>
+      <div className={st.timerDisplay}>
         <TimerDisplay seconds={timer.latestValue} />
         <TimerControls timerId={timer.id} />
       </div>

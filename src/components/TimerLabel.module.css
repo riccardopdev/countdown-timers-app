@@ -1,0 +1,4 @@
+.p {
+  padding: var(--spacing-unit);
+  color: white;
+}
