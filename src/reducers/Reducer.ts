@@ -39,7 +39,6 @@ const Reducer = (state: DataType, action: ActionsType) => {
           timer.id === action.payload.id
             ? {
                 ...timer,
-                initialTimeStamp: currentDate,
                 latestTimeStamp: currentDate,
                 latestValue: timer.initialValue,
                 paused: true,

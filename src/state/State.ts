@@ -5,7 +5,6 @@ const SAMPLE_TIMERS_DATA = [
   {
     id: crypto.randomUUID(),
     label: 'Sample timer',
-    initialTimeStamp: new Date(),
     initialValue: 30,
     latestTimeStamp: new Date(),
     latestValue: 30,

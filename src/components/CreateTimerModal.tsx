@@ -30,7 +30,6 @@ const CreateTimerModal = ({
     const newTimer: TimerType = {
       id: crypto.randomUUID(),
       label: timerLabel,
-      initialTimeStamp: new Date(),
       initialValue: timerValue,
       latestTimeStamp: new Date(),
       latestValue: timerValue,
