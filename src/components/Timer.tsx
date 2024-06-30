@@ -10,6 +10,10 @@ const Timer = ({ timer }: TimerProps) => {
   const { dispatch } = useContext<DataContextType>(DataContext);
 
   useEffect(() => {
+    if (timer.latestValue === 0 && !timer.completed) {
+      dispatch({ type: ACTIONS.STOP_TIMER, payload: timer });
+    }
+
     if (!timer.paused && !timer.completed) {
       const timerId = setTimeout(() => {
         dispatch({ type: ACTIONS.UPDATE_TIMER, payload: timer });
