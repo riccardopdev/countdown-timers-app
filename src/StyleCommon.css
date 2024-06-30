@@ -6,6 +6,7 @@
 
 body {
   font-family: sans-serif;
+  /* background-color: rgb(var(--dark-color)); */
 }
 
 main {
@@ -15,12 +16,12 @@ main {
 
 h1 {
   font-size: 2.4rem;
-  margin-bottom: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 p {
@@ -29,9 +30,13 @@ p {
 
 label {
   display: block;
+  padding-bottom: var(--spacing-unit);
+  font-size: 1.2rem;
 }
 
 input,
 textarea {
-  margin-bottom: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+  padding: calc(var(--spacing-unit) * 2);
+  font-size: 1.5rem;
 }

@@ -1,7 +1,10 @@
 :root {
-  --dark-bg: 2, 53, 53;
-  --medium-bg: 1, 89, 88;
-  --light-bg: 0, 143, 140;
+  --dark-color: 0, 0, 0;
+  --medium-color: 116, 126, 126;
+  --light-color: 63, 124, 133;
+  --positive-color: 0, 204, 191;
+  --positive-light-color: 114, 242, 235;
+  --warning-color: 255, 95, 93;
 
   --spacing-unit: 8px;
 }
