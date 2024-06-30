@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useReducer, useState, useEffect } from 'react';
 import Reducer from './reducers/Reducer';
 import { DataContext } from './context/DataContext';
 import { State } from './state/State';
@@ -7,8 +7,18 @@ import CreateTimerModal from './components/CreateTimerModal';
 import Header from './components/Header';
 
 const App = () => {
-  const [state, dispatch] = useReducer(Reducer, State);
+  const getInitialState = () => {
+    // localStorage.clear();
+    const storedState = localStorage.getItem('timerAppLocalState');
+    return storedState ? JSON.parse(storedState) : State;
+  };
+
+  const [state, dispatch] = useReducer(Reducer, getInitialState());
   const [showModal, setShowModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    localStorage.setItem('timerAppLocalState', JSON.stringify(state));
+  }, [state]);
 
   const openModal = () => {
     setShowModal(true);
