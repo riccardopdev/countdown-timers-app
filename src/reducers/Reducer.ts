@@ -5,6 +5,7 @@ import { ACTIONS } from './Actions';
 const Reducer = (state: DataType, action: ActionsType) => {
   switch (action.type) {
     case ACTIONS.CREATE_TIMER:
+      state = { timers: [...state.timers, action.payload] };
       return state;
     case ACTIONS.DELETE_TIMER:
       return state;
