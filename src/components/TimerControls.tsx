@@ -44,11 +44,6 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
       controlText = 'Pause';
       controlCallback = pauseTimer;
     }
-
-    if (thisTimer.completed) {
-      controlText = 'Reset';
-      controlCallback = resetTimer;
-    }
   };
 
   setControlProps();
@@ -57,6 +52,7 @@ const TimerControls = ({ timerId }: TimerControlsProps) => {
     <div>
       <button onClick={deleteTimer}>Delete</button>
       <button onClick={controlCallback}>{controlText}</button>
+      <button onClick={resetTimer}>Reset</button>
     </div>
   );
 };
