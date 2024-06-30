@@ -1,17 +1,18 @@
 import { useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 import { DataContextType } from '../types/DataContextType';
+import Timer from './Timer';
 
 const TimerList = () => {
   const { state } = useContext<DataContextType>(DataContext);
 
   const renderTimerList = () => {
     return state.timers.map((timer) => {
-      return <p>{timer.initialTimeStamp.toString()}</p>;
+      return <Timer key={timer.id} timer={timer} />;
     });
   };
 
-  return <h1>{renderTimerList()}</h1>;
+  return <div>{renderTimerList()}</div>;
 };
 
 export default TimerList;
